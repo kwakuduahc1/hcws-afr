@@ -1,0 +1,85 @@
+variable,label
+record_id,Record ID
+d_carer_b,"Do you currently provide direct care to patients, or do you expect to provide direct care to patients in a health facility/hospital within the next four weeks (NOT limited to COVID-19 patients) in Ghana"
+consent,I understand that my participation is completely voluntary
+willing,Are you willing to participate in this survey?
+d_age_i,Age
+gender,"<div class=""rich-text-field-label""><p>Kindly indicate your gender</p></div>"
+d_marital_c_u,What is your current marital status?
+d_edu_c_o,Educational level completed
+d_educ_other,Kindly Specify
+d_chdn_i,Number of child dependents in the household below 18 years
+d_region_c_o,Which region do you work in?
+d_hosp_c_u,What type of facility are you primarily stationed at?
+d_job_role_c_u,What is your current job role?
+d_work_unit_c_u,Select the unit within the hospital that most closely matches the job that you do
+d_other_group_ch,Kindly indicate the professional group you belong to
+d_contact_freq_i,How many days in the previous month did you have any direct patient contact (touching or speaking in-person)?
+d_job_type_c_u,What is your current engagement type with the hospital?
+d_training_years_i,For how many years have you been seeing patients as a professional?
+e_ever_worked_c_u,"Have you previously worked in a clinical setting during an acute respiratory epidemic or pandemic, for example, H1N1 (2009)?"
+e_ever_cared_c_u,"In a clinical setting, did you personally care for patients with suspected or confirmed infection caused by a novel respiratory pathogen for example, H1N1?"
+e_ever_contact_c_u,Has a patient with suspected or confirmed COVID-19 attended the hospital in which you work?
+e_do_care_c_o,Have you personally cared for a patient with suspected or confirmed COVID-19 infection? 
+e_contact_type_c_o,What was your most recent type of contact with a suspected/confirmed COVID-19 case?
+e_aerosol_c_o,"Did this contact include an aerosol generating procedure? For example, tracheal intubation, non-invasive ventilation, bronchoscopy, cardiopulmonary resuscitation?"
+i_n95_c_o,"During my direct contact, I used an N95 respirator mask"
+i_mask_c_o,"During my direct contact, I used a Surgical Mask"
+i_hand_hyg_c_o,"During my direct contact, I performed Hand hygiene"
+i_gown_c_o,"During my direct contact, I used Fluid-Resistant Gown"
+i_apron_c_o,"During my direct contact, I used Disposable plastic apron"
+i_full_suit_c_o,"During my direct contact, I wore a Full body suit"
+i_gloves_c_o,"During my direct contact, I wore a Gloves"
+i_eye_protect_c_o,"During my direct contact, I used Eye Protection (goggles, face shields)"
+i_sing_use_eqps_c_o,"During my direct contact, I used a Single-use (disposable) equipment (e.g. disposable gloves, auto-disable syringes)"
+s_can_manage_c_o,I am confident that the hospital where I work can MANAGE CURRENT patient demand related to COVID-19
+s_cont_mge_c_o,I am confident that the hospital where I work can CONTINUE TO MANAGE patient demand related to COVID-19 over the next 3 months
+s_ipc_skill_c_o,"I have received general training for infection, prevention, and control procedures for communicable diseases"
+s_received_training,I have received sufficient training in the Infection Prevention and Control (IPC)  practices specifically for COVID-19
+s_can_don_c_o,I am confident in my ability to correctly don and doff personal protective equipment to prevent transmission of COVID-19 to others and myself
+s_can_followc_o,"<div>I am confident that I am able to follow recommended procedures <br />related to personal protective equipment (PPE) for COVID-19 e.g. appropriate use and disposal of gloves, apron and fluid resistant surgical mask</div>"
+s_can_protect_c_0,I consider that the implementation of protective procedures at work are effective to prevent the spread of COVID-19 in my hospital
+s_is_proected,Following the IPC recommendations will protect me from becoming ill with COVID-19
+s_is_straining_c_o,Following recommended IPC procedures adds significant additional strain to my workload
+s_will_use_c_o,"I will always use the recommended personal protective equipment (medical mask, eye protection, gown and gloves) when taking care of patients with suspected or confirmed COVID-19 when I have access to these"
+s_proto_exists_c_o,There are clear policies and protocols in my hospital for everyone to follow related to IPC procedures for COVID-19
+s_can_access_ppe_c_o,"I can easily access personal protective equipment (PPE) in line with standard infection control precautions, such as gloves, apron and masks, for COVID-19 in the hospital where I work"
+s_has_iso_fac,In my hospital there are dedicated isolation facilities for patients with COVID-19
+s_know_cont_c_o,"I know who to contact if I have trouble with PPE, or if I have a body fluid exposure/ unprotected contact with a confirmed case of COVID-19"
+s_get_supp_c_o,"<div>The hospital where I work receives good support from <br />national/ regional/municipal/district/assembly/local public health authorities, <br />who provide guidance and training on how to manage COVID-19</div>"
+s_coll_follow_c_o,"Most of my colleagues regularly follow infection, prevention and control measures (for example, regular hand washing, use of personal protective equipment, proper disposal of equipment)"
+s_expected_i_fllw_c_o,"It is expected that in my role as a healthcare professional, I will follow IPC measures"
+s_enco_supp_c_o,I am encouraged and supported by other staff to apply recommendedIPC measures
+s_risk_concd_c_o,I am concerned about the risk to myself of becoming ill with COVID-19
+s_fam_concd_c_o,I am concerned about the risk to my family related to COVID-19 because of my job role
+s_is_afraid_c_o,I am afraid of looking after patients who are ill with COVID-19
+s_accept_c_o,I accept that the risk of getting COVID-19 is part of my job
+s_my_ctrl_c_o,Whether I get infected with COVID-19 or not is within my control
+s_alcohol_c_o,Alcohol hand rub
+r_n95_c_o,N95 respirator mask
+r_surg_mask_c_o,Surgical Mask
+r_fluid_gown_c_o,Fluid-resistant gown
+r_disp_apron_c_o,Disposable plastic apron
+r_disp_gloves_c_o,Disposable gloves
+r_full_suit_c_o,Full body suit
+r_eye_prot_c_o,"Eye Protection (goggles, face shields)"
+w_cheer_c_o,I have felt cheerful and in good spirits
+w_calm_c_o,I have felt calm and relaxed
+w_active_c_o,I have felt active and vigorous
+w_rested_c_o,I wake up feeling fresh and rested
+w_interest_c_o,The health facility where I work are being honest with staff when managing COVID-19
+f_cmpt_c_o,The health facility where I work has the capacity to manage COVID-19
+f_hnst_c_o,The management of the health facility where I work are being honest with staff when managing COVID-19
+f_best_int_c_o,The management of the health facility where I work would act in the best interest of its staff when managing COVID-19
+e_c19_exp_c_o,Have you been exposed to COVID-19 before?
+e_risk_assess_c_o,"If yes, have you ever had to under-go a risk assessment after an exposure? "
+e_risk_level_b,"If yes, what was your risk level?"
+e_did_isolate_b,"If yes, Have you ever had to isolate after a possible exposure of COVID-19 "
+e_isolate_days_ch,How long was the isolation
+e_exp_loc_c_u,Where was this exposure
+e_exp_loc_other_ch,"If other, please specify"
+e_c19_test_b,Have you ever had a test for COVID-19?
+e_results_dur_n,How long did it take you to get your results?
+e_test_results_c_o,What was your result?
+e_pos_mgmt_c_u,"If tested positive, where were you managed?"
+e_comments_ch,Thank you for completing this survey. Do you have any additional information/comments you will like to share?

@@ -2,6 +2,8 @@
 d_age_i,age,Age,Demography
 gen,gender,Gender,Demography
 d_edu_c_o,education,Education Status,Demography
+d_hosp_c_u,hosp_type,Hospital Type,Demography
+d_job_role_c_u,job_role,Job Role,Demography
 d_marital_c_u,marital,Marital Status,Demography
 d_chdn_i,chdn,Number of children,Demography
 e_ever_worked_c_u,ever_worked,Previous pandemic exposure,Experience

@@ -1,0 +1,46 @@
+﻿original_var_name,new_var_name,Description,Category
+id,id,ID,None
+d_age_i,age,Age,Demography
+gen,gender,Gender,Demography
+d_edu_c_o,education,Education Status,Demography
+d_hosp_c_u,hosp_type,Hospital Type,Demography
+d_job_role_c_u,job_role,Job Role,Demography
+d_marital_c_u,marital,Marital Status,Demography
+d_chdn_i,chdn,Number of children,Demography
+e_ever_worked_c_u,ever_worked,Previous pandemic exposure,Experience
+e_ever_cared_c_u,ever_cared,Cared for respiratory pathogen,Experience
+e_ever_contact_c_u,ever_contact,COVID-19 cases at your hospital,Experience
+e_do_care_c_o,do_care,Cared for a COVID-19 victim,Experience
+e_contact_type_c_o,cont_type,Type of contact,IPC
+e_aerosol_c_o,aerosol,Aerosol generating procedure,IPC
+i_n95_c_o,n95,N95,IPC
+i_mask_c_o,mask,Other masks,IPC
+i_hand_hyg_c_o,hand_wash,Hand hygiene,IPC
+i_gown_c_o,gown,Gown,IPC
+i_apron_c_o,apron,Apron,IPC
+i_full_suit_c_o,full_suit,Full body suit,IPC
+i_gloves_c_o,gloves,Gloves,IPC
+i_eye_protect_c_o,eye_protect,Eye protections,IPC
+i_sing_use_eqps_c_o,sue,Single-use equipments,IPC
+s_can_followc_o,can_follow,Follow procedures,Beliefs and Capabilities
+s_can_protect_c_0,can_protect,Protocols can prevent spread,Beliefs and Capabilities
+s_is_proected,is_protected,IPC recommendations will protect me,Beliefs and Capabilities
+s_is_straining_c_o,is_strain,IPC recommendations are straining,Beliefs and Capabilities
+s_will_use_c_o,will_use,I will comply IPC protocols,Beliefs and Capabilities
+s_proto_exists_c_o,proto_exists,IPC protocols are in my hospital,Envoronmental context and resources
+s_can_access_ppe_c_o,access_ppe,PPE are accessible,Envoronmental context and resources
+s_has_iso_fac,isolation,There are isolation facilities,Envoronmental context and resources
+s_know_cont_c_o,contact_pers,There is a contact person after exposure,Envoronmental context and resources
+s_get_supp_c_o,support,My hospital is supported,Social influence
+s_coll_follow_c_o,colleagues_follow,Colleagues follow IPC measures,Social influence
+s_expected_i_fllw_c_o,exp_to_follow,I am expected to follow IPC protocols,Social influence
+s_enco_supp_c_o,encouraged,I am encouraged to follow IPC protocols,Emotional state
+s_risk_concd_c_o,concerned,Concerned about COVID-19 risk,Emotional state
+s_fam_concd_c_o,family_concerned,Concerned about COVID-19 risk on family,Emotional state
+s_is_afraid_c_o,fearful,Afraid of COVID-19 victims,Emotional state
+s_accept_c_o,accept_risk,Acceptance of risk,Emotional state
+s_my_ctrl_c_o,have_ctrl,Control over risk,Emotional state
+f_cmpt_c_o,capacity,Facility has capacity,Trust in health facility
+f_hnst_c_o,honest,Facility is honest,Trust in health facility
+f_best_int_c_o,intentions,Facility has my interest,Trust in health facility
+Country,ctry,Country,Demography

@@ -1,0 +1,79 @@
+---
+title: "Cleaning HCWS"
+output: html_notebook
+---
+
+```{r include=FALSE}
+library(tidyverse)
+library(magrittr)
+library(flextable)
+library(pander)
+
+hcws <- read_rds("hcws 20220225")
+```
+
+# Check the gender
+```{r}
+table(hcws$d_gender, useNA = "always") %>% pander()
+```
+
+```{r}
+hist(hcws$d_age_i, main = "Histogram of age", xlab = "Ages")
+```
+## Display the age in descending order and identify the extreme and improbable values
+```{r}
+hcws %>% 
+  filter(d_age_i < 18 | d_age_i > 75) %>% 
+  select(ID = ctry_id, Country = country, Age = d_age_i) %>% 
+  arrange(Age) %>% 
+  pander()
+```
+What should we do to rectify this?
+
+## Marital status
+Use the new marital status grouping
+```{r}
+hcws %$% table(marital) %>% pander()
+```
+
+```{r}
+table(hcws$education) %>% pander()
+```
+
+The levels targeted for removal. Their entries are suspicious
+```{r}
+hcws %>% 
+  filter(education == "Remove?") %>% 
+  select(ID = ctry_id, Country = country, Education = d_edu_c_o, Other = educ_other, Profession = d_job_role_c_u, Type = d_job_type_c_u)
+```
+
+
+### Suggestion
+Rename `Undergraduate` correctly as graduate, then all others under it as undergraduate.
+
+
+## Number of children
+Different countries used different scales. As such, it has to be combined as one. The new groupings are seen below
+```{r}
+hcws %$% table(children) %>% 
+  pander()
+```
+
+## Hospitals
+```{r}
+hcws %$% 
+  table(hospital, country) %>% 
+  pander()
+```
+
+Senegal classified the hospital as Level 1 to 3. It would be easier (and best in my opinion) to arrange the hospitals as such.
+
+## Job roles
+```{r}
+hcws %$% 
+  table(job_role) %>% 
+  pander()
+```
+The grouping above closely matches the stated job role or as indicated in the "other". We cal combine all others as 1, possible removing responses from students.
+
+

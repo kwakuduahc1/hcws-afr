@@ -1,0 +1,16 @@
+---
+title: "Healthcare Worker Survey - Africa"
+author: "ALERRT"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+hcws <- readRDS("hcws 22022022")
+```
+
+
+```{r cars}
+gtsummary::tbl_summary(hcws[, -c(1, 2)], by = country)
+```

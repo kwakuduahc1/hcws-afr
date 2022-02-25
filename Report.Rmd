@@ -1,0 +1,84 @@
+---
+title: "Healthcare worker survey"
+author: "Global Health and Infectious Disease Group"
+date: "10/15/2021"
+output: word_document
+---
+
+```{r setup, include=FALSE, echo=FALSE, message=FALSE, error=FALSE, warning=FALSE, comment=F}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, error=FALSE, warning=FALSE, comment=F)
+library(tidyverse)
+library(gtsummary)
+library(ggpubr)
+
+hcws_l <- read_rds("hcws gh_cam_uga labelled.rds")
+cdbk <- read_csv("code book.csv")
+```
+
+## Demographic characteristics
+```{r }
+dems <- cdbk %>% filter(Category == "Demography") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
+
+## Experience
+```{r }
+dems <- cdbk %>% filter(Category == "Experience") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
+
+
+## Social influence
+```{r }
+dems <- cdbk %>% filter(Category == "Social influence") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
+
+## IPC
+```{r }
+dems <- cdbk %>% filter(Category == "IPC") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
+
+
+## Beliefs and Capabilities
+```{r }
+dems <- cdbk %>% filter(Category == "Beliefs and Capabilities") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
+
+
+## Emotional state
+```{r }
+dems <- cdbk %>% filter(Category == "Emotional state") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
+
+
+## Envoronmental context and resources
+```{r }
+dems <- cdbk %>% filter(Category == "Envoronmental context and resources") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
+
+## Trust in health facility
+```{r }
+dems <- cdbk %>% filter(Category == "Envoronmental context and resources") %>% select(new_var_name) %>% pull(1)
+hcws_l %>% 
+  select(all_of(dems), ctry) %>% 
+  tbl_summary(by = ctry)
+```
