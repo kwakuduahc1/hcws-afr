@@ -24,7 +24,9 @@ table(hcws$d_gender, useNA = "always") %>%
 ```{r}
 hist(hcws$d_age_i, main = "Histogram of age", xlab = "Ages")
 ```
+
 ## Display the age in descending order and identify the extreme and improbable values
+
 Ages less than 18 and more than 75
 ```{r}
 hcws %>% 
@@ -60,18 +62,13 @@ hcws %>%
   tbl_summary(by = marital, statistic = everything() ~ "{n}")
 ```
 
-```{r}
-hces %>% 
-  select(education) %>% 
-```
-
+## Education
 The levels targeted for removal. Their entries are suspicious
 ```{r}
 hcws %>% 
   filter(education == "Remove?") %>% 
   select(ID = ctry_id, Country = country, Education = d_edu_c_o, Other = educ_other, Profession = d_job_role_c_u, Type = d_job_type_c_u)
 ```
-
 
 ### Suggestion
 Rename `Undergraduate` correctly as graduate, then all others under it as undergraduate.
@@ -80,25 +77,54 @@ Rename `Undergraduate` correctly as graduate, then all others under it as underg
 ## Number of children
 Different countries used different scales. As such, it has to be combined as one. The new groupings are seen below
 ```{r}
-hcws %$% table(children) %>% 
-  pander()
+hcws %>% 
+  select(children, country) %>% 
+  mutate(
+    children = fct_recode(children, "None" = "0", "One" = "1", "Two to Four" = "2 to 4")
+  ) %>% 
+  tbl_summary(by = country, statistic = everything() ~ "{n}")
 ```
 
 ## Hospitals
 ```{r}
-hcws %$% 
-  table(hospital, country) %>% 
-  pander()
+hcws %>% 
+  select(hospital, country) %>% 
+  tbl_summary(by = country, statistic = everything() ~ "{n}")
 ```
 
 Senegal classified the hospital as Level 1 to 3. It would be easier (and best in my opinion) to arrange the hospitals as such.
 
 ## Job roles
 ```{r}
-hcws %$% 
-  table(job_role) %>% 
-  pander()
+hcws %>% 
+  dplyr::select(job_role, country) %>% 
+  tbl_summary(by = country, statistic = everything() ~ "{n}")
 ```
 The grouping above closely matches the stated job role or as indicated in the "other". We cal combine all others as 1, possible removing responses from students.
 
 
+## Display variables
+```{r}
+hcws %>% 
+  # mutate(
+  #   ipc_skills
+  # ) %>% 
+  select(
+    s_received_training:b_dir_interest, country
+  ) %>% 
+  tbl_summary(by = country, statistic = everything() ~ "{n}") 
+```
+
+
+## Suggested levels
+```{r warning=FALSE, message=FALSE}
+hcws <- hcws %>% 
+  mutate(
+    across(s_received_training:b_dir_interest, ~fct_collapse(.x, Agree = c("Absolutely agree", "agree", "disagree", "neither agree", "nor disagree", "not agree at all", "somewhat disagree", "Somewhat disagree", "strongly disagree", "Strongly disagree", "Option totally agree", "Option totally agree", "rather Agree", "somewhat agree agree", "Yes", "all the time", "All the time", "La_plupart_de_le_temps", "all the time", "more than half the time", "most of the time", "part of the time", "Tout_le_temps", "rather agree, agree", "totally agree agree"),
+                                                             Disagree = c("rather agree", "rather disagree", "somewhat agree", "Somewhat agree", "Somwhat agree", "strongly agree", "Strongly agree", "totally agree", "without opinion", "rather not Agree", "somewhat agree agree	", "rather not 'agree", "No", "at no moment", "less than half the time"),
+                                                             Neutral = c("Neither agree nor disagree", "neither agree nor disagree", "Sans Opinoion", "Do not know")))
+  ) 
+hcws %>% 
+  select(s_received_training:b_dir_interest, country) %>% 
+  tbl_summary(by = country, statistic = everything() ~ "{n}")
+```

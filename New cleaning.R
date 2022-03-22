@@ -22,3 +22,9 @@ hcws3 %>%
     s_will_use_c_o
   ) %>% 
   tbl_summary()
+
+char_vec <- sample(c("a", "b", "c"), 10, replace = TRUE)
+recode(char_vec, a = "Apple")
+recode(char_vec, a = "Apple", b = "Banana")
+
+#
