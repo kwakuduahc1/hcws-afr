@@ -6,21 +6,26 @@ output: html_notebook
 ```{r include=FALSE}
 library(tidyverse)
 library(magrittr)
+library(gtsummary)
 library(flextable)
-library(pander)
 
-hcws <- read_rds("hcws 20220225")
+
+hcws <- read_rds("hcws 23mar2022")
 ```
 
 # Check the gender
 ```{r}
-table(hcws$d_gender, useNA = "always") %>% pander()
+table(hcws$d_gender, useNA = "always") %>% 
+  as.data.frame() %>% 
+  set_colnames(c("Gender", "Freq")) %>% 
+  flextable()
 ```
 
 ```{r}
 hist(hcws$d_age_i, main = "Histogram of age", xlab = "Ages")
 ```
 ## Display the age in descending order and identify the extreme and improbable values
+Ages less than 18 and more than 75
 ```{r}
 hcws %>% 
   filter(d_age_i < 18 | d_age_i > 75) %>% 
@@ -28,16 +33,36 @@ hcws %>%
   arrange(Age) %>% 
   pander()
 ```
-What should we do to rectify this?
+Set such ages to the median age.
+
+Any suggestion?
+
+```{r age-correction, include=FALSE}
+med <- median(hcws$d_age_i, na.rm = T)
+hcws <- hcws %>% 
+  mutate(
+    d_age_i = case_when(d_age_i <18 | d_age_i > 75 ~ med, T ~ d_age_i) %>% as.integer()
+  )
+```
+
+See the effect of the data cleaning
+```{r}
+hist(hcws$d_age_i, xlab = "Age", main = "Histogram of age")
+```
+Look more of age distribution of healthcare workers to me
 
 ## Marital status
 Use the new marital status grouping
 ```{r}
-hcws %$% table(marital) %>% pander()
+hcws %>% 
+  select(marital, d_marital_c_u) %>% 
+  mutate(marital = fct_explicit_na(marital)) %>% 
+  tbl_summary(by = marital, statistic = everything() ~ "{n}")
 ```
 
 ```{r}
-table(hcws$education) %>% pander()
+hces %>% 
+  select(education) %>% 
 ```
 
 The levels targeted for removal. Their entries are suspicious
